@@ -1,0 +1,102 @@
+#-----------------------------------------------------------------------------
+#
+# bridge
+#
+#-----------------------------------------------------------------------------
+
+
+SET(DEVICE_SRC
+        device/definition/bridge/BridgeIID.h
+        device/definition/bridge/Bridge.h
+        device/definition/bridge/Bridge.c
+        device/definition/bridge/Bridge_2_Identify.c
+        device/definition/bridge/Bridge_2_Identify.h
+        device/definition/bridge/Bridge_3_Manufacturer.c
+        device/definition/bridge/Bridge_3_Manufacturer.h
+        device/definition/bridge/Bridge_4_Model.c
+        device/definition/bridge/Bridge_4_Model.h
+        device/definition/bridge/Bridge_5_Name.c
+        device/definition/bridge/Bridge_5_Name.h
+        device/definition/bridge/Bridge_6_SerialNumber.c
+        device/definition/bridge/Bridge_6_SerialNumber.h
+        device/definition/bridge/Bridge_7_FirmwareRevision.c
+        device/definition/bridge/Bridge_7_FirmwareRevision.h
+        device/definition/bridge/Bridge_1_AccessoryInformation.c
+        device/definition/bridge/Bridge_1_AccessoryInformation.h
+        device/definition/bridge/Bridge_9_Version.c
+        device/definition/bridge/Bridge_9_Version.h
+        device/definition/bridge/Bridge_8_HapProtocolInformation.c
+        device/definition/bridge/Bridge_8_HapProtocolInformation.h
+        device/definition/lightbulb/LightbulbIID.h
+        device/definition/lightbulb/Lightbulb.h
+        device/definition/lightbulb/Lightbulb.c
+        device/definition/lightbulb/S_1_AccessoryInformation.h
+        device/definition/lightbulb/S_1_AccessoryInformation.c
+        device/definition/lightbulb/P_1_2_Identify.h
+        device/definition/lightbulb/P_1_2_Identify.c
+        device/definition/lightbulb/P_1_3_Manufacturer.h
+        device/definition/lightbulb/P_1_3_Manufacturer.c
+        device/definition/lightbulb/P_1_4_Model.h
+        device/definition/lightbulb/P_1_4_Model.c
+        device/definition/lightbulb/P_1_5_Name.h
+        device/definition/lightbulb/P_1_5_Name.c
+        device/definition/lightbulb/P_1_6_SerialNumber.h
+        device/definition/lightbulb/P_1_6_SerialNumber.c
+        device/definition/lightbulb/P_1_7_FirmwareRevision.h
+        device/definition/lightbulb/P_1_7_FirmwareRevision.c
+        device/definition/lightbulb/S_8_Lightbulb.h
+        device/definition/lightbulb/S_8_Lightbulb.c
+        device/definition/lightbulb/P_8_9_On.h
+        device/definition/lightbulb/P_8_9_On.c
+        device/definition/lightbulb/P_8_10_Brightness.h
+        device/definition/lightbulb/P_8_10_Brightness.c
+        device/handler/OnPropertyGet.h
+        device/handler/OnPropertyGet.c
+        device/handler/OnPropertySet.h
+        device/handler/OnPropertySet.c
+        device/handler/bridge/Bridge_doPropertyGet.h
+        device/handler/bridge/Bridge_doPropertyGet.c
+        device/handler/bridge/Bridge_doPropertySet.h
+        device/handler/bridge/Bridge_doPropertySet.c
+        device/handler/bridge/Bridge_1_AccessoryInformation/Bridge_1_AccessoryInformation_doGet.h
+        device/handler/bridge/Bridge_1_AccessoryInformation/Bridge_1_AccessoryInformation_doGet.c
+        device/handler/bridge/Bridge_1_AccessoryInformation/Bridge_1_AccessoryInformation_doSet.h
+        device/handler/bridge/Bridge_1_AccessoryInformation/Bridge_1_AccessoryInformation_doSet.c
+        device/handler/bridge/Bridge_8_HapProtocolInformation/Bridge_8_HapProtocolInformation_doGet.h
+        device/handler/bridge/Bridge_8_HapProtocolInformation/Bridge_8_HapProtocolInformation_doGet.c
+        device/handler/bridge/Bridge_8_HapProtocolInformation/Bridge_8_HapProtocolInformation_doSet.h
+        device/handler/bridge/Bridge_8_HapProtocolInformation/Bridge_8_HapProtocolInformation_doSet.c
+        device/handler/lightbulb/Lightbulb_doPropertyGet.h
+        device/handler/lightbulb/Lightbulb_doPropertyGet.c
+        device/handler/lightbulb/Lightbulb_doPropertySet.h
+        device/handler/lightbulb/Lightbulb_doPropertySet.c
+        device/handler/lightbulb/S_1_AccessoryInformation/S_1_AccessoryInformation_doGet.h
+        device/handler/lightbulb/S_1_AccessoryInformation/S_1_AccessoryInformation_doGet.h
+        device/handler/lightbulb/S_1_AccessoryInformation/S_1_AccessoryInformation_doGet.c
+        device/handler/lightbulb/S_1_AccessoryInformation/S_1_AccessoryInformation_doSet.h
+        device/handler/lightbulb/S_1_AccessoryInformation/S_1_AccessoryInformation_doSet.c
+        device/handler/lightbulb/S_8_Lightbulb/S_8_Lightbulb_doGet.h
+        device/handler/lightbulb/S_8_Lightbulb/S_8_Lightbulb_doGet.c
+        device/handler/lightbulb/S_8_Lightbulb/S_8_Lightbulb_doSet.h
+        device/handler/lightbulb/S_8_Lightbulb/S_8_Lightbulb_doSet.c
+        device/initializer/InitializeConfiguration.h
+        device/initializer/InitializeConfiguration.c
+        device/print/PrintValue.h
+        device/print/PrintValue.c
+        )
+
+SET(SRC
+        ${DEVICE_SRC}
+        persistence/HapPersistenceImpl.h
+        persistence/HapPersistenceImpl.c
+        DeviceMonitor.h
+        DeviceMonitor.c
+	HomeKitStack.h
+	HomeKitStack.c
+        CommandReader.h
+        CommandReader.c
+        main.c
+        )
+
+ADD_EXECUTABLE(bridge ${SRC})
+TARGET_LINK_LIBRARIES(bridge ${DEPENDENCE_LIB})
