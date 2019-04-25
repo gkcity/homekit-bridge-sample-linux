@@ -9,6 +9,8 @@ SET(DEVICE_SRC
         device/definition/bridge/BridgeIID.h
         device/definition/bridge/Bridge.h
         device/definition/bridge/Bridge.c
+        device/definition/bridge/Bridge_1_AccessoryInformation.c
+        device/definition/bridge/Bridge_1_AccessoryInformation.h
         device/definition/bridge/Bridge_2_Identify.c
         device/definition/bridge/Bridge_2_Identify.h
         device/definition/bridge/Bridge_3_Manufacturer.c
@@ -21,35 +23,41 @@ SET(DEVICE_SRC
         device/definition/bridge/Bridge_6_SerialNumber.h
         device/definition/bridge/Bridge_7_FirmwareRevision.c
         device/definition/bridge/Bridge_7_FirmwareRevision.h
-        device/definition/bridge/Bridge_1_AccessoryInformation.c
-        device/definition/bridge/Bridge_1_AccessoryInformation.h
-        device/definition/bridge/Bridge_9_Version.c
-        device/definition/bridge/Bridge_9_Version.h
         device/definition/bridge/Bridge_8_HapProtocolInformation.c
         device/definition/bridge/Bridge_8_HapProtocolInformation.h
-        device/definition/lightbulb/LightbulbIID.h
-        device/definition/lightbulb/Lightbulb.h
-        device/definition/lightbulb/Lightbulb.c
-        device/definition/lightbulb/S_1_AccessoryInformation.h
-        device/definition/lightbulb/S_1_AccessoryInformation.c
-        device/definition/lightbulb/P_1_2_Identify.h
-        device/definition/lightbulb/P_1_2_Identify.c
-        device/definition/lightbulb/P_1_3_Manufacturer.h
-        device/definition/lightbulb/P_1_3_Manufacturer.c
-        device/definition/lightbulb/P_1_4_Model.h
-        device/definition/lightbulb/P_1_4_Model.c
-        device/definition/lightbulb/P_1_5_Name.h
-        device/definition/lightbulb/P_1_5_Name.c
-        device/definition/lightbulb/P_1_6_SerialNumber.h
-        device/definition/lightbulb/P_1_6_SerialNumber.c
-        device/definition/lightbulb/P_1_7_FirmwareRevision.h
-        device/definition/lightbulb/P_1_7_FirmwareRevision.c
-        device/definition/lightbulb/S_8_Lightbulb.h
-        device/definition/lightbulb/S_8_Lightbulb.c
-        device/definition/lightbulb/P_8_9_On.h
-        device/definition/lightbulb/P_8_9_On.c
-        device/definition/lightbulb/P_8_10_Brightness.h
-        device/definition/lightbulb/P_8_10_Brightness.c
+        device/definition/bridge/Bridge_9_Version.c
+        device/definition/bridge/Bridge_9_Version.h
+        device/definition/airconditioner/AirConditioner_IID.h
+        device/definition/airconditioner/AirConditioner.h
+        device/definition/airconditioner/AirConditioner.c
+        device/definition/airconditioner/AirConditioner_1_AccessoryInformation.h
+        device/definition/airconditioner/AirConditioner_1_AccessoryInformation.c
+        device/definition/airconditioner/AirConditioner_2_Identify.h
+        device/definition/airconditioner/AirConditioner_2_Identify.c
+        device/definition/airconditioner/AirConditioner_3_Manufacturer.h
+        device/definition/airconditioner/AirConditioner_3_Manufacturer.c
+        device/definition/airconditioner/AirConditioner_4_Model.h
+        device/definition/airconditioner/AirConditioner_4_Model.c
+        device/definition/airconditioner/AirConditioner_5_Name.h
+        device/definition/airconditioner/AirConditioner_5_Name.c
+        device/definition/airconditioner/AirConditioner_6_SerialNumber.h
+        device/definition/airconditioner/AirConditioner_6_SerialNumber.c
+        device/definition/airconditioner/AirConditioner_7_FirmwareRevision.h
+        device/definition/airconditioner/AirConditioner_7_FirmwareRevision.c
+        device/definition/airconditioner/AirConditioner_8_Thermostat.h
+        device/definition/airconditioner/AirConditioner_8_Thermostat.c
+        device/definition/airconditioner/AirConditioner_9_Name.h
+        device/definition/airconditioner/AirConditioner_9_Name.c
+        device/definition/airconditioner/AirConditioner_10_CurrentHeatingCoolingState.h
+        device/definition/airconditioner/AirConditioner_10_CurrentHeatingCoolingState.c
+        device/definition/airconditioner/AirConditioner_11_TargetHeatingCoolingState.h
+        device/definition/airconditioner/AirConditioner_11_TargetHeatingCoolingState.c
+        device/definition/airconditioner/AirConditioner_12_CurrentTemperature.h
+        device/definition/airconditioner/AirConditioner_12_CurrentTemperature.c
+        device/definition/airconditioner/AirConditioner_13_TargetTemperature.h
+        device/definition/airconditioner/AirConditioner_13_TargetTemperature.c
+        device/definition/airconditioner/AirConditioner_14_TemperatureDisplayUnits.h
+        device/definition/airconditioner/AirConditioner_14_TemperatureDisplayUnits.c
         device/handler/OnPropertyGet.h
         device/handler/OnPropertyGet.c
         device/handler/OnPropertySet.h
@@ -58,27 +66,28 @@ SET(DEVICE_SRC
         device/handler/bridge/Bridge_doPropertyGet.c
         device/handler/bridge/Bridge_doPropertySet.h
         device/handler/bridge/Bridge_doPropertySet.c
-        device/handler/bridge/Bridge_1_AccessoryInformation/Bridge_1_AccessoryInformation_doGet.h
-        device/handler/bridge/Bridge_1_AccessoryInformation/Bridge_1_AccessoryInformation_doGet.c
-        device/handler/bridge/Bridge_1_AccessoryInformation/Bridge_1_AccessoryInformation_doSet.h
-        device/handler/bridge/Bridge_1_AccessoryInformation/Bridge_1_AccessoryInformation_doSet.c
-        device/handler/bridge/Bridge_8_HapProtocolInformation/Bridge_8_HapProtocolInformation_doGet.h
-        device/handler/bridge/Bridge_8_HapProtocolInformation/Bridge_8_HapProtocolInformation_doGet.c
-        device/handler/bridge/Bridge_8_HapProtocolInformation/Bridge_8_HapProtocolInformation_doSet.h
-        device/handler/bridge/Bridge_8_HapProtocolInformation/Bridge_8_HapProtocolInformation_doSet.c
-        device/handler/lightbulb/Lightbulb_doPropertyGet.h
-        device/handler/lightbulb/Lightbulb_doPropertyGet.c
-        device/handler/lightbulb/Lightbulb_doPropertySet.h
-        device/handler/lightbulb/Lightbulb_doPropertySet.c
-        device/handler/lightbulb/S_1_AccessoryInformation/S_1_AccessoryInformation_doGet.h
-        device/handler/lightbulb/S_1_AccessoryInformation/S_1_AccessoryInformation_doGet.h
-        device/handler/lightbulb/S_1_AccessoryInformation/S_1_AccessoryInformation_doGet.c
-        device/handler/lightbulb/S_1_AccessoryInformation/S_1_AccessoryInformation_doSet.h
-        device/handler/lightbulb/S_1_AccessoryInformation/S_1_AccessoryInformation_doSet.c
-        device/handler/lightbulb/S_8_Lightbulb/S_8_Lightbulb_doGet.h
-        device/handler/lightbulb/S_8_Lightbulb/S_8_Lightbulb_doGet.c
-        device/handler/lightbulb/S_8_Lightbulb/S_8_Lightbulb_doSet.h
-        device/handler/lightbulb/S_8_Lightbulb/S_8_Lightbulb_doSet.c
+        device/handler/bridge/1/Bridge_1_AccessoryInformation_doGet.h
+        device/handler/bridge/1/Bridge_1_AccessoryInformation_doGet.c
+        device/handler/bridge/1/Bridge_1_AccessoryInformation_doSet.h
+        device/handler/bridge/1/Bridge_1_AccessoryInformation_doSet.c
+        device/handler/bridge/8/Bridge_8_HapProtocolInformation_doGet.h
+        device/handler/bridge/8/Bridge_8_HapProtocolInformation_doGet.c
+        device/handler/bridge/8/Bridge_8_HapProtocolInformation_doSet.h
+        device/handler/bridge/8/Bridge_8_HapProtocolInformation_doSet.c
+        device/handler/airconditioner/AirConditioner_doPropertyGet.h
+        device/handler/airconditioner/AirConditioner_doPropertyGet.c
+        device/handler/airconditioner/AirConditioner_doPropertySet.h
+        device/handler/airconditioner/AirConditioner_doPropertySet.c
+        device/handler/airconditioner/1/AirConditioner_1_AccessoryInformation_doGet.h
+        device/handler/airconditioner/1/AirConditioner_1_AccessoryInformation_doGet.c
+        device/handler/airconditioner/1/AirConditioner_1_AccessoryInformation_doSet.h
+        device/handler/airconditioner/1/AirConditioner_1_AccessoryInformation_doSet.c
+        device/handler/airconditioner/8/AirConditioner_8_Thermostat_doGet.h
+        device/handler/airconditioner/8/AirConditioner_8_Thermostat_doGet.c
+        device/handler/airconditioner/8/AirConditioner_8_Thermostat_doSet.h
+        device/handler/airconditioner/8/AirConditioner_8_Thermostat_doSet.c
+        device/handler/airconditioner/8/HeatingCoolingState.h
+        device/handler/airconditioner/8/TemperatureDisplayUnits.h
         device/initializer/InitializeConfiguration.h
         device/initializer/InitializeConfiguration.c
         device/print/PrintValue.h
@@ -91,8 +100,8 @@ SET(SRC
         persistence/HapPersistenceImpl.c
         DeviceMonitor.h
         DeviceMonitor.c
-	HomeKitStack.h
-	HomeKitStack.c
+        HomeKitStack.h
+        HomeKitStack.c
         CommandReader.h
         CommandReader.c
         main.c

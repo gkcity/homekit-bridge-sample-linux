@@ -13,8 +13,8 @@
 #include "Bridge_doPropertyGet.h"
 #include <status/HapStatus.h>
 #include "../../definition/bridge/BridgeIID.h"
-#include "Bridge_1_AccessoryInformation/Bridge_1_AccessoryInformation_doGet.h"
-#include "Bridge_8_HapProtocolInformation/Bridge_8_HapProtocolInformation_doGet.h"
+#include "1/Bridge_1_AccessoryInformation_doGet.h"
+#include "8/Bridge_8_HapProtocolInformation_doGet.h"
 
 void Bridge_doPropertyGet(PropertyOperation *o)
 {

@@ -12,10 +12,9 @@
 
 #include "OnPropertySet.h"
 #include <status/HapStatus.h>
-#include "../definition/lightbulb/LightbulbIID.h"
 #include "../print/PrintValue.h"
 #include "bridge/Bridge_doPropertySet.h"
-#include "lightbulb/Lightbulb_doPropertySet.h"
+#include "airconditioner/AirConditioner_doPropertySet.h"
 
 void OnPropertySet(PropertyOperation *o)
 {
@@ -28,13 +27,8 @@ void OnPropertySet(PropertyOperation *o)
             Bridge_doPropertySet(o);
             break;
 
-        case 2:
-        case 3:
-            Lightbulb_doPropertySet(o);
-            break;
-
         default:
-            o->status = HAP_OUT_OF_RESOURCES;
+            AirConditioner_doPropertySet(o);
             break;
     }
 }

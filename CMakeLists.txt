@@ -1,7 +1,7 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
-PROJECT(HomeKitSample C)
+PROJECT(HomeKitBridgeSample C)
 
-SET(PROJ_NAME "HomeKitSample")
+SET(PROJ_NAME "HomeKitBridgeSample")
 
 #----------------------------------------------------------------------------
 #

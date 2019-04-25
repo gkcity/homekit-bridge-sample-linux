@@ -11,10 +11,9 @@
 */
 
 #include "OnPropertyGet.h"
-#include "../definition/lightbulb/LightbulbIID.h"
 #include <status/HapStatus.h>
 #include "bridge/Bridge_doPropertyGet.h"
-#include "lightbulb/Lightbulb_doPropertyGet.h"
+#include "airconditioner/AirConditioner_doPropertyGet.h"
 
 void OnPropertyGet(PropertyOperation *o)
 {
@@ -26,14 +25,8 @@ void OnPropertyGet(PropertyOperation *o)
             Bridge_doPropertyGet(o);
             break;
 
-        case 2:
-        case 3:
-        case 4:
-            Lightbulb_doPropertyGet(o);
-            break;
-
         default:
-            o->status = HAP_OUT_OF_RESOURCES;
+            AirConditioner_doPropertyGet(o);
             break;
     }
 }

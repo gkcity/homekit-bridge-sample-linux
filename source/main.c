@@ -2,6 +2,7 @@
 #include <tiny_snprintf.h>
 #include <device/access/Access.h>
 #include "device/definition/bridge/Bridge.h"
+#include "device/definition/airconditioner/AirConditioner.h"
 #include "device/initializer/InitializeConfiguration.h"
 #include "HomeKitStack.h"
 #include "DeviceMonitor.h"
@@ -13,6 +14,37 @@
 #define NAME                "demo"
 #define IP                  "10.0.1.29"
 #define SETUP_CODE          "031-45-154"
+
+
+TinyRet addAccessories(Product *product)
+{
+    TinyRet ret = TINY_RET_OK;
+
+    do
+    {
+        // 注意，accessory id 必须从2开始
+
+        ret = TinyList_AddTail(&product->children, AirConditioner(2));
+        if (RET_FAILED(ret))
+        {
+            break;
+        }
+
+        ret = TinyList_AddTail(&product->children, AirConditioner(3));
+        if (RET_FAILED(ret))
+        {
+            break;
+        }
+
+        ret = TinyList_AddTail(&product->children, AirConditioner(4));
+        if (RET_FAILED(ret))
+        {
+            break;
+        }
+    } while (false);
+
+    return ret;
+}
 
 int main(void)
 {
@@ -26,6 +58,14 @@ int main(void)
      */
     product = Bridge(DID, NAME, IP, SETUP_CODE);
     if (product == NULL)
+    {
+        return 0;
+    }
+
+    /**
+     * 1.1 扫描子设备，并添加到Bridge中
+     */
+    if (RET_FAILED(addAccessories(product)))
     {
         return 0;
     }

@@ -11,9 +11,9 @@
  */
 
 #include <tiny_snprintf.h>
+#include "Bridge.h"
 #include "Bridge_1_AccessoryInformation.h"
 #include "Bridge_8_HapProtocolInformation.h"
-#include "../lightbulb/Lightbulb.h"
 #include "../../handler/OnPropertySet.h"
 #include "../../handler/OnPropertyGet.h"
 #include "../../initializer/InitializeConfiguration.h"
@@ -46,27 +46,6 @@ Product * Bridge(const char *did, const char *name, const char *ip, const char *
 
         if (RET_FAILED(TinyList_AddTail(&thiz->device.services, Bridge_8_HapProtocolInformation())))
         {
-            break;
-        }
-
-        if (RET_FAILED(TinyList_AddTail(&thiz->children, Lightbulb(2))))
-        {
-            Product_Delete(thiz);
-            thiz = NULL;
-            break;
-        }
-
-        if (RET_FAILED(TinyList_AddTail(&thiz->children, Lightbulb(3))))
-        {
-            Product_Delete(thiz);
-            thiz = NULL;
-            break;
-        }
-
-        if (RET_FAILED(TinyList_AddTail(&thiz->children, Lightbulb(4))))
-        {
-            Product_Delete(thiz);
-            thiz = NULL;
             break;
         }
 
