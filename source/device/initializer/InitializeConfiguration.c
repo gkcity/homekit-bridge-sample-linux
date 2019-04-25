@@ -27,7 +27,7 @@ static void InitializeAccessoryConfiguration(AccessoryConfig *thiz, const char *
     strncpy(thiz->setupCode, setupCode,ACCESSORY_SETUP_CODE_LENGTH);
     strncpy(thiz->setupId, SETUP_ID, ACCESSORY_SETUP_ID_LENGTH);
     thiz->configurationNumber = 2;
-    thiz->categoryIdentifier = ACCESSORY_CATEGORY_LIGHTING;
+    thiz->categoryIdentifier = ACCESSORY_CATEGORY_BRIDGES;
     thiz->featureFlags = 0;
     thiz->stateNumber = 1;
     thiz->statusFlags = 0x01;
